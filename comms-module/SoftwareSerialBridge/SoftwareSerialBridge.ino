@@ -27,9 +27,12 @@
  */
 #include <SoftwareSerial.h>
 
-SoftwareSerial deviceSerial(2,3); // RX, TX
+// change these to use available pins
+SoftwareSerial deviceSerial(9,10); // RX, TX
 
-#define DIGITAL_OUT_PIN    13
+// pin 7 is for the flora
+#define DIGITAL_OUT_PIN    7
+
 void blink(uint8_t count);
 
 void setup()
@@ -52,6 +55,7 @@ void loop() // run over and over
   } 
   
   while(Serial.available() > 0) {
+    didReceive = true;
     deviceSerial.write(Serial.read());
   }
   
