@@ -1,5 +1,8 @@
 /*
-  Software serial multple serial test
+ Software serial multple serial test
+
+ This has been adapted as a Proof-of-concept for using software
+ and hardware serial on the Flora board, as part of the Senti8 project.
 
  Receives from the hardware serial, sends to software serial.
  Receives from software serial, sends to hardware serial.
@@ -24,6 +27,7 @@
 
  This example code is in the public domain.
 
+ Modified for Senti8 by Robert Carlsen.
  */
 #include <SoftwareSerial.h>
 
@@ -45,20 +49,20 @@ void setup()
 }
 
 void loop() // run over and over
-{    
-  
+{
+
   bool didReceive = false;
-  
+
   while(deviceSerial.available() > 0) {
     didReceive = true;
     Serial.write(deviceSerial.read());
-  } 
-  
+  }
+
   while(Serial.available() > 0) {
     didReceive = true;
     deviceSerial.write(Serial.read());
   }
-  
+
   if(didReceive){
     blink(1);
   }
@@ -70,7 +74,7 @@ void blink(uint8_t count)
     digitalWrite(DIGITAL_OUT_PIN, HIGH);   // turn the LED on (HIGH is the voltage level)
     delay(100);                            // wait for a bit
     digitalWrite(DIGITAL_OUT_PIN, LOW);    // turn the LED off by making the voltage LOW
-    delay(100);   
+    delay(100);
   }
 }
 
