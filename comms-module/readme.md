@@ -34,8 +34,9 @@ We will use messages that are exactly three bytes long:
 </tr>
 <tr>
 <td>Emit scent</td>
-<td>`0x10`</td>
+<td><code>0x10</code></td>
 <td>
+<code>
     0x0 - (Reserved)
     0x1 - Soil
     0x2 - Home
@@ -43,14 +44,16 @@ We will use messages that are exactly three bytes long:
     0x4 - Nature
     0x5 - Space
     0x6 - Fire
+</code>
 </td>
-<td>`0x0 (not used)`</td>
+<td><code>0x0 (not used)</code></td>
 <td>Device should “play” the selected scent.</td>
 </tr>
 <tr>
 <td>Scent selected (not used)</td>
-<td>`0x1a`</td>
+<td><code>0x1a</code></td>
 <td>
+<code>
     0x0 - (Reserved)
     0x1 - Soil
     0x2 - Home
@@ -58,8 +61,9 @@ We will use messages that are exactly three bytes long:
     0x4 - Nature
     0x5 - Space
     0x6 - Fire
+</code>
 </td>
-<td>`0x0 (not used)`</td>
+<td><code>0x0 (not used)</code></td>
 <td>Button was pressed on the device. (TBD)</td>
 </tr>
 </table>
@@ -68,3 +72,8 @@ We will use messages that are exactly three bytes long:
 ## Bluetooth Low Energy shields
 We are using a BLE Arduino Shield to provide simple connectivity,
 the [RedBear BLE Shield](http://redbearlab.com/bleshield/).
+
+
+[1]: https://2014.spaceappschallenge.org/
+[2]: https://2014.spaceappschallenge.org/challenge/space-wearables-fashion-designer-astronauts/
+
